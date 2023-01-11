@@ -1,0 +1,17 @@
+@use "styles/variables/colors.scss";
+
+.sidebar {
+    &-container {
+        width: 255px;
+        height: 100vh;
+        background-color: colors.$white;
+        height: 100vh;
+        overflow-y: auto;
+    }
+
+    &-header {
+        justify-content: center;
+        margin-top: 1rem;
+        display: flex;
+    }
+}
