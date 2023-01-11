@@ -1,3 +1,18 @@
+@use "styles/variables/colors.scss";
+
 .navbar-container {
     height: 50px;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .greeting {
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    .input-search {
+        width: 406px;
+    }
 }

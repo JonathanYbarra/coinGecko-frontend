@@ -1,10 +1,10 @@
 import React from "react";
-import { RouterProvider } from 'react-router-dom';
+import { RouterProvider } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import { store } from "./app/store";
-import router from './router';
+import { router } from "./router";
 import "styles/index.scss";
 
 const container = document.getElementById("root")!;
