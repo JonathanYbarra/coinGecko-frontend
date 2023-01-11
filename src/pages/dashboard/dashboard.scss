@@ -1,0 +1,10 @@
+@use "styles/variables/colors.scss";
+
+.dashboard-container {
+    padding: 0 32px;
+
+    .card-coins-prices {
+        display: flex;
+        gap: 2rem;
+    }
+}

@@ -1,3 +1,18 @@
+@use "./variables/colors.scss";
+
+// vendors
+@import url("./vendors/normalize.scss");
+@import url("./vendors/grid-system.scss");
+
 body {
-    background-color: yellow;
+    background-color: colors.$gray-50;
+    font-family: 'Encode Sans';
+}
+
+.app-container {
+    display: flex;
+}
+
+.container-outlet{
+    width: 100%;
 }
