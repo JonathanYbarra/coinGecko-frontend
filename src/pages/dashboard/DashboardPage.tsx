@@ -1,10 +1,10 @@
-import { useGetCoinsMarketQuery } from "app/services/api";
+import { useGetCoinsMarketByIdQuery } from "app/services/api";
 import { CurrencyCard } from "./_components";
 import "./dashboard.scss";
 import { LoadingContainer } from "components/loadingContainer";
 
 export const DashboardPage = () => {
-  const { data: coins, isLoading } = useGetCoinsMarketQuery(undefined, {
+  const { data: coins, isLoading } = useGetCoinsMarketByIdQuery(undefined, {
     // pollingInterval: 4000
   });
 
