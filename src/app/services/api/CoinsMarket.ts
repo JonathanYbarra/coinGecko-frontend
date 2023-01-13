@@ -4,10 +4,11 @@ import { CoinsMarket } from "./CoinsMarket.types";
 export const coinsMarket = baseApi
   .enhanceEndpoints({ addTagTypes: ["CoinsMarket"] })
   .injectEndpoints({
+
     endpoints: (builder) => ({
       getCoinsMarket: builder.query<CoinsMarket[], void>({
         query: () =>
-          "/coins/markets?vs_currency=usd&ids=bitcoin%2Cethereum%2Ctether%2Cbinancecoin",
+          "/coins/markets?vs_currency=usd&ids=bitcoin%2Cethereum%2Ctether%2Cbinancecoin%2Cripple",
         providesTags: (result) =>
           result
             ? [

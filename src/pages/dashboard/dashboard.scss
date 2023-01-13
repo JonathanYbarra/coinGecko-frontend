@@ -5,6 +5,53 @@
 
     .card-coins-prices {
         display: flex;
-        gap: 2rem;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 1rem;
+
+        .card {
+            width: 300px;
+            flex: 1 0 300px;
+
+            .content {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                img {
+                    width: 3.5rem;
+                }
+
+                .info {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+
+                    .transaction {
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+
+                        i {
+                            font-size: 10px;
+                        }
+                    }
+
+                    .price {
+                        font-size: 1.6rem;
+                        font-weight: 500;
+                    }
+
+                    .trend {
+                        display: flex;
+                        gap: 0.5rem;
+                        
+                        i {
+                            color: colors.$green-500;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

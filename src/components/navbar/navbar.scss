@@ -1,10 +1,12 @@
 @use "styles/variables/colors.scss";
+@use "styles/variables/breakpoints.scss";
 
 .navbar-container {
     height: 50px;
     padding: 20px 0;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     align-items: center;
 
     .greeting {
@@ -12,7 +14,9 @@
         font-weight: 600;
     }
 
-    .input-search {
-        width: 406px;
+    span {
+        @include breakpoints.breakpoint(md) {
+            display: none;
+        }
     }
 }

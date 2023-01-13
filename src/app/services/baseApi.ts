@@ -5,6 +5,9 @@ import { config } from './config';
 // Los endpoints serán definidos luego en archivos separados.
 
 export const baseApi = createApi({
+  refetchOnMountOrArgChange: true,
+  refetchOnFocus: true,
+  refetchOnReconnect: true,
   baseQuery: fetchBaseQuery({
     baseUrl: config.apiUrl,
   }),

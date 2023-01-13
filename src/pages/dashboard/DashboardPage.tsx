@@ -1,24 +1,22 @@
 import { useGetCoinsMarketQuery } from "app/services/api";
-import { Card } from "components/card";
+import { CurrencyCard } from "./_components";
 import "./dashboard.scss";
+import { LoadingContainer } from "components/loadingContainer";
 
 export const DashboardPage = () => {
-  const { data: coins } = useGetCoinsMarketQuery();
+  const { data: coins, isLoading } = useGetCoinsMarketQuery(undefined, {
+    // pollingInterval: 4000
+  });
 
   return (
-    <div className="dashboard-container">
-      <section className="card-coins-prices">
-        {coins?.map((coin) => (
-          <Card key={coin.id}>
-            <div>
-              <img src={coin.image} alt={coin.name} />
-              <span>{coin.name}</span>
-              <span>to USD</span>
-              <p>{coin.current_price}</p>
-            </div>
-          </Card>
-        ))}
-      </section>
-    </div>
+    <LoadingContainer isLoading={isLoading}>
+      <div className="dashboard-container">
+        <section className="card-coins-prices">
+          {coins?.map((coin) => (
+            <CurrencyCard coin={coin} />
+          ))}
+        </section>
+      </div>
+    </LoadingContainer>
   );
 };

@@ -1,12 +1,17 @@
 @use "styles/variables/colors.scss";
+@use "styles/variables/breakpoints.scss";
 
 .sidebar {
+    
     &-container {
         width: 255px;
         height: 100vh;
         background-color: colors.$white;
         height: 100vh;
         overflow-y: auto;
+        @include breakpoints.breakpoint(md) {
+            display: none;
+        }
     }
 
     &-header {
