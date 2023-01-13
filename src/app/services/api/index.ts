@@ -1,2 +1,2 @@
-export * from './CoinsMarket';
-export * from './CoinsMarket.types';
+export * from './coinsMarket/CoinsMarket';
+export * from './coinsMarket/CoinsMarket.types';

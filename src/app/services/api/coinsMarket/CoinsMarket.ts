@@ -1,4 +1,4 @@
-import { baseApi } from "../baseApi";
+import { baseApi } from "../../baseApi";
 import { CoinsMarket } from "./CoinsMarket.types";
 
 export const coinsMarket = baseApi
@@ -20,6 +20,7 @@ export const coinsMarket = baseApi
             ]
             : [{ type: "CoinsMarket", id: "LIST" }],
       }),
+      
       getCoinsMarket: builder.query<CoinsMarket[], void>({
         query: () =>
           "/coins/markets?vs_currency=usd&per_page=10&page",

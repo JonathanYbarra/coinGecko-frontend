@@ -1,7 +1,9 @@
 import { useGetCoinsMarketByIdQuery } from "app/services/api";
+
+import { LoadingContainer } from "components/loadingContainer";
+import { TopExchanges } from "./_components/TopExchanges";
 import { CurrencyCard } from "./_components";
 import "./dashboard.scss";
-import { LoadingContainer } from "components/loadingContainer";
 
 export const DashboardPage = () => {
   const { data: coins, isLoading } = useGetCoinsMarketByIdQuery(undefined, {
@@ -16,6 +18,8 @@ export const DashboardPage = () => {
             <CurrencyCard coin={coin} />
           ))}
         </section>
+
+        <TopExchanges />
       </div>
     </LoadingContainer>
   );

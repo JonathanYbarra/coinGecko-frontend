@@ -1,28 +1,83 @@
-import { COIN_LIST_ROUTE, DASHBOARD_ROUTE } from "router";
-import { SidebarItem } from "./SidebarItem";
-import logo from "assets/coasn_logo.png";
-import "./sidebar.scss";
+import { useNavigate } from "react-router-dom";
+import { COIN_LIST_ROUTE, DASHBOARD_ROUTE } from 'router';
 
-export const Sidebar = () => {
+import { Divider, ListItem, ListItemButton, ListItemIcon, Box, List, ListItemText, Toolbar, Drawer } from '@mui/material';
+import CurrencyBitcoinIcon from '@mui/icons-material/CurrencyBitcoin';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import flixxoCoin from "assets/flixx-coin.png";
+import { useActivePath } from "hooks";
+
+type SidebarProps = {
+  drawerWidth: number;
+  window?: () => Window;
+  handleDrawerToggle: () => void;
+  mobileOpen: boolean;
+}
+
+export const Sidebar = ({ window, drawerWidth, handleDrawerToggle, mobileOpen }: SidebarProps) => {
+  const { activeColorItem } = useActivePath();
+  const container = window !== undefined ? () => window().document.body : undefined;
+  const navigate = useNavigate();
+
+  const drawer = <>
+    <Toolbar>
+      <Box px={4} pt={2}>
+        <img src={flixxoCoin} alt="Flixxo" width={110} />
+      </Box>
+    </Toolbar>
+    <Divider />
+    <List>
+      <ListItem disablePadding>
+        <ListItemButton onClick={() => navigate(DASHBOARD_ROUTE)}>
+          <ListItemIcon >
+            <DashboardIcon color='primary' />
+          </ListItemIcon>
+          <ListItemText primary="Dashboard" primaryTypographyProps={{ ...activeColorItem(DASHBOARD_ROUTE) }} />
+        </ListItemButton>
+      </ListItem>
+
+      <ListItem disablePadding>
+        <ListItemButton onClick={() => navigate(COIN_LIST_ROUTE)}>
+          <ListItemIcon>
+            <CurrencyBitcoinIcon color='primary' />
+          </ListItemIcon>
+          <ListItemText primary="All coins" primaryTypographyProps={{ ...activeColorItem(COIN_LIST_ROUTE) }} />
+        </ListItemButton>
+      </ListItem>
+    </List>
+  </>
+
   return (
-    <aside className="sidebar-container">
-      <div className="sidebar-header">
-        <img src={logo} alt="logo" />
-      </div>
-
-      <div className="sidebar-items">
-        <SidebarItem
-          to={DASHBOARD_ROUTE}
-          activeClassName="active"
-          label="Dashboard"
-        />
-
-        <SidebarItem
-          to={COIN_LIST_ROUTE}
-          activeClassName="active"
-          label="All coins"
-        />
-      </div>
-    </aside>
+    <Box
+      component="nav"
+      sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+      aria-label="mailbox folders"
+    >
+      <Drawer
+        container={container}
+        variant="temporary"
+        open={mobileOpen}
+        onClose={handleDrawerToggle}
+        ModalProps={{
+          keepMounted: true
+        }}
+        sx={{
+          display: { xs: 'block', sm: 'none' },
+          '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+        }}
+      >
+        {drawer}
+      </Drawer>
+      <Drawer
+        variant="permanent"
+        sx={{
+          display: { xs: 'none', sm: 'block' },
+          '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+        }}
+        open
+      >
+        {drawer}
+      </Drawer>
+    </Box>
   );
 };
