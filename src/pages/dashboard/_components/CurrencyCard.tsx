@@ -1,6 +1,6 @@
 import { CoinsMarket } from "app/services/api";
 import { Card } from "components/card";
-import { calculatePercentage } from "helpers";
+import { calculatePercentage, formatCurrency } from "helpers";
 
 type CurrencyCardProps = {
   coin: CoinsMarket;
@@ -20,7 +20,7 @@ export const CurrencyCard = ({ coin }: CurrencyCardProps) => {
             <i className="fa-solid fa-arrow-right-arrow-left"></i>
             <span>USD</span>
           </div>
-          <span className="price">{coin.current_price} US$</span>
+          <span className="price">{formatCurrency(coin.current_price)}</span>
 
           <div className="trend">
             <i className="fa-solid fa-arrow-trend-up"></i>
