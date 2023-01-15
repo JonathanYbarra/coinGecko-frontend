@@ -1,3 +1,4 @@
+
 export type CoinsMarket = {
   id: string;
   symbol: string;
@@ -26,3 +27,22 @@ export type CoinsMarket = {
   roi: null;
   last_updated: string;
 };
+
+export type CoinDetail = {
+  name: string;
+  categories: string[];
+  description: {
+    en: string;
+  };
+  id: string
+  image: {
+    large: string,
+    small: string,
+    thumb: string
+  };
+  symbol: string;
+}
+
+export type Marketchart = {
+  prices: [number[]];
+}

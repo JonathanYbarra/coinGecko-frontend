@@ -1,8 +1,8 @@
-import IconButton from '@mui/material/IconButton';
-import AppBar from '@mui/material/AppBar';
+import { useNavigate } from 'react-router-dom';
+import { DASHBOARD_ROUTE } from 'router';
+
+import { IconButton, Toolbar, Typography, AppBar } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import Toolbar from '@mui/material/Toolbar';
-import { Typography } from '@mui/material';
 import flixxo from "assets/flixxo-logo.png";
 
 type NavbarProps = {
@@ -11,6 +11,8 @@ type NavbarProps = {
 }
 
 export const Navbar = ({ drawerWidth, handleDrawerToggle }: NavbarProps) => {
+  const navigate = useNavigate();
+
   return (
     <AppBar
       sx={{
@@ -30,7 +32,7 @@ export const Navbar = ({ drawerWidth, handleDrawerToggle }: NavbarProps) => {
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
           Hello...
         </Typography>
-        <Typography variant="h6">
+        <Typography variant="button" onClick={() => navigate(DASHBOARD_ROUTE)}>
           <img src={flixxo} alt="Flixxo" />
         </Typography>
       </Toolbar>

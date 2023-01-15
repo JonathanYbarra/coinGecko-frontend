@@ -3,6 +3,14 @@ export const calculatePercentage = (currentValue: number, previousValue: number)
     return value.toFixed(2);
 }
 
-export const formatCurrency = (number: number): string => {
-    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(number);
+export const formatCurrency = (amount: number): string => {
+    const minimumFractionDigits = amount.toString().split(".")[1]?.length || 2;
+
+    const formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits,
+    });
+
+    return formatter.format(amount).replace(/\D00(?=\D*$)/, '');
 }

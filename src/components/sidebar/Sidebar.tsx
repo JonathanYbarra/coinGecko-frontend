@@ -6,6 +6,7 @@ import CurrencyBitcoinIcon from '@mui/icons-material/CurrencyBitcoin';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import flixxoCoin from "assets/flixx-coin.png";
 import { useActivePath } from "hooks";
+import Typography from "@mui/material/Typography";
 
 type SidebarProps = {
   drawerWidth: number;
@@ -22,7 +23,9 @@ export const Sidebar = ({ window, drawerWidth, handleDrawerToggle, mobileOpen }:
   const drawer = <>
     <Toolbar>
       <Box px={4} pt={2}>
-        <img src={flixxoCoin} alt="Flixxo" width={110} />
+        <Typography variant="button" onClick={() => navigate(DASHBOARD_ROUTE)}>
+          <img src={flixxoCoin} alt="Flixxo" width={110} />
+        </Typography>
       </Box>
     </Toolbar>
     <Divider />

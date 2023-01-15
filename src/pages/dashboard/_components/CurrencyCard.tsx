@@ -1,16 +1,19 @@
 import { CoinsMarket } from "app/services/api";
 import { Card } from "components/card";
-import { calculatePercentage, formatCurrency } from "helpers";
+import { formatCurrency } from "helpers";
+import { CurrencyItemPriceChange } from "./CurrencyItemPriceChange";
+import { COIN_ROUTE } from "router";
+import { useNavigate } from 'react-router-dom';
 
 type CurrencyCardProps = {
   coin: CoinsMarket;
 };
 
 export const CurrencyCard = ({ coin }: CurrencyCardProps) => {
-  const increase = calculatePercentage(coin.current_price, coin.high_24h);
+  const navigate = useNavigate();
 
   return (
-    <Card key={coin.id}>
+    <Card onClick={() => navigate(`${COIN_ROUTE}/${coin.id}`)}>
       <div className="content">
         <img src={coin.image} alt={coin.name} />
 
@@ -22,10 +25,7 @@ export const CurrencyCard = ({ coin }: CurrencyCardProps) => {
           </div>
           <span className="price">{formatCurrency(coin.current_price)}</span>
 
-          <div className="trend">
-            <i className="fa-solid fa-arrow-trend-up"></i>
-            <span>%{increase}</span>
-          </div>
+          <CurrencyItemPriceChange price_change_24h={coin.price_change_24h} />
         </div>
       </div>
     </Card>

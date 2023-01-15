@@ -1,5 +1,9 @@
 import "./card.scss";
 
-export const Card = ({ children }: any) => {
-  return <div className="card">{children}</div>;
+type CardProps = {
+  children: React.ReactNode;
+  onClick: () => void;
+}
+export const Card = ({ children, ...rest }: CardProps) => {
+  return <div className="card" {...rest}>{children}</div>;
 };

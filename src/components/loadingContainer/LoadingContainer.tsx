@@ -9,9 +9,11 @@ type LoadingContainerProps = {
 
 export const LoadingContainer = ({ isLoading, children }: LoadingContainerProps) => {
     return (
-        <div className="loading-container">
+        <div>
             {isLoading ? (
-                <Spinner />
+                <div className="loading-container">
+                    <Spinner />
+                </div>
             ) : (
                 children
             )}
