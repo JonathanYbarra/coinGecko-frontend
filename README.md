@@ -8,8 +8,9 @@
 1. Descargue o clone el repositorio en su computadora
 2. Abra una terminal en la raíz del proyecto
 3. Ejecute el comando `npm install` o `yarn install` para instalar las dependencias necesarias
-4. Ejecute el comando `npm start` o `yarn start` para iniciar la aplicación en modo desarrollo
-5. Abra su navegador web y visite `http://localhost:3000` para ver la aplicación en funcionamiento
+4. Cambiar el nombre del archivo .env.example a .env y guardar
+5. Ejecute el comando `npm start` o `yarn start` para iniciar la aplicación en modo desarrollo
+6. Abra su navegador web y visite `http://localhost:3000` para ver la aplicación en funcionamiento
 
 ## Pruebas
 
