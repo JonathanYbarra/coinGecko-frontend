@@ -55,7 +55,7 @@ describe('HomePage.cy.ts', () => {
           <CurrencyCard coin={coin} />
         </Router>
       );
-      cy.get("[data-cy=card]").click();
+      cy.get("[type='button']").click();
       cy.location("pathname").should("eq", `${COIN_ROUTE}/bitcoin`);
     });
   });

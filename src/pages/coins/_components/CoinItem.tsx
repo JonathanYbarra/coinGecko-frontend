@@ -1,4 +1,4 @@
-import { ListItem, ListItemText, ListItemAvatar, Avatar, Typography, Grid } from '@mui/material';
+import { ListItem, ListItemText, ListItemAvatar, Avatar, Typography, Grid, Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
 import { CoinsMarket } from 'app/services/api';
@@ -26,7 +26,14 @@ export const CoinItem = ({ coin }: CoinItemProps) => {
             </Grid>
 
             <Grid item>
-                Mkt Capitalization
+                <Typography
+                    component="p"
+                    variant="caption"
+                    color="text.gray"
+                    mt={2}
+                >
+                    Mkt Capitalization
+                </Typography>
                 <Typography
                     component="p"
                     variant="body2"
@@ -34,12 +41,24 @@ export const CoinItem = ({ coin }: CoinItemProps) => {
                 >
                     {formatCurrency(coin.market_cap)}
                 </Typography>
+
+                <Grid sx={{ marginTop: 1 }}>
+                    <Button
+                        size="small"
+                        variant="text"
+                        color="secondary"
+                        onClick={() => navigate(`${COIN_ROUTE}/${coin.id}`)}
+
+                    >
+                        See more
+                    </Button>
+                </Grid>
             </Grid>
         </Grid>
     )
 
     return (
-        <ListItem alignItems="flex-start" onClick={() => navigate(`${COIN_ROUTE}/${coin.id}`)}>
+        <ListItem alignItems="flex-start">
             <ListItemAvatar>
                 <Avatar alt={coin.name} src={coin.image} />
             </ListItemAvatar>
