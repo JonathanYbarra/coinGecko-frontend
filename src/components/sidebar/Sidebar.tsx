@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { COIN_LIST_ROUTE, DASHBOARD_ROUTE } from 'router';
+import { COIN_LIST_ROUTE, HOME_ROUTE } from 'router';
 
 import { Divider, ListItem, ListItemButton, ListItemIcon, Box, List, ListItemText, Toolbar, Drawer } from '@mui/material';
 import CurrencyBitcoinIcon from '@mui/icons-material/CurrencyBitcoin';
@@ -23,7 +23,7 @@ export const Sidebar = ({ window, drawerWidth, handleDrawerToggle, mobileOpen }:
   const drawer = <>
     <Toolbar>
       <Box px={4} pt={2}>
-        <Typography variant="button" onClick={() => navigate(DASHBOARD_ROUTE)}>
+        <Typography variant="button" onClick={() => navigate(HOME_ROUTE)}>
           <img src={flixxoCoin} alt="Flixxo" width={110} />
         </Typography>
       </Box>
@@ -31,11 +31,11 @@ export const Sidebar = ({ window, drawerWidth, handleDrawerToggle, mobileOpen }:
     <Divider />
     <List>
       <ListItem disablePadding>
-        <ListItemButton onClick={() => navigate(DASHBOARD_ROUTE)}>
+        <ListItemButton onClick={() => navigate(HOME_ROUTE)}>
           <ListItemIcon >
             <DashboardIcon color='primary' />
           </ListItemIcon>
-          <ListItemText primary="Dashboard" primaryTypographyProps={{ ...activeColorItem(DASHBOARD_ROUTE) }} />
+          <ListItemText primary="Dashboard" primaryTypographyProps={{ ...activeColorItem(HOME_ROUTE) }} />
         </ListItemButton>
       </ListItem>
 

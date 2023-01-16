@@ -1,11 +1,12 @@
 @use "styles/variables/colors.scss";
+@use "styles/mixins/flex.scss";
 
 .card {
+    @include flex.flexbox();
+    @include flex.align-items(center);
     background-color: colors.$white;
-    align-items: center;
     border-radius: 16px;
-    display: flex;
+    width: fit-content;
     padding: 24px;
     gap: 16px;
-    width: fit-content;
 }

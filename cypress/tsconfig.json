@@ -1,0 +1,13 @@
+{
+  "extends": "../tsconfig.json",
+  "include": [
+    "../node_modules/cypress",
+    "*/*.ts",
+    "**/*.ts",
+    "../cypress.d.ts"
+, "component/HomePage.cy.tsx", "integration/HomePage.spec.js"  ],
+  "compilerOptions": {
+    "noEmit": false,
+    "outDir": "../dist/cypress",
+  }
+}

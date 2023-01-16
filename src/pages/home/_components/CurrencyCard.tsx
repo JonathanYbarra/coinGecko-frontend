@@ -13,7 +13,7 @@ export const CurrencyCard = ({ coin }: CurrencyCardProps) => {
   const navigate = useNavigate();
 
   return (
-    <Card onClick={() => navigate(`${COIN_ROUTE}/${coin.id}`)}>
+    <Card onClick={() => navigate(`${COIN_ROUTE}/${coin.id}`)} data-cy="card">
       <div className="content">
         <img src={coin.image} alt={coin.name} />
 
@@ -31,3 +31,5 @@ export const CurrencyCard = ({ coin }: CurrencyCardProps) => {
     </Card>
   );
 };
+
+export default CurrencyCard;

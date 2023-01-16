@@ -14,11 +14,13 @@ export const CurrencyItemPriceChange = ({ price_change_24h }: CurrencyItemPriceP
         <>
             {
                 price_change_24h &&
-                <Box>
-                    {isPositive ? <TrendingUpIcon color="success" /> : <TrendingDownIcon color="error" />}
-                    <Typography color={color}>{formatCurrency(price_change_24h)}</Typography>
+                <Box id="price-change-container">
+                    {isPositive ? <TrendingUpIcon color="success" id="price-change-icon" /> : <TrendingDownIcon color="error" id="price-change-icon" />}
+                    <Typography color={color} id="price-change-value">{formatCurrency(price_change_24h)}</Typography>
                 </Box>
             }
         </>
     )
 }
+
+export default CurrencyItemPriceChange;

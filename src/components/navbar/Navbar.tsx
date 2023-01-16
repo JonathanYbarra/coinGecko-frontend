@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { DASHBOARD_ROUTE } from 'router';
+import { HOME_ROUTE } from 'router';
 
 import { IconButton, Toolbar, Typography, AppBar } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -32,7 +32,7 @@ export const Navbar = ({ drawerWidth, handleDrawerToggle }: NavbarProps) => {
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
           Hello...
         </Typography>
-        <Typography variant="button" onClick={() => navigate(DASHBOARD_ROUTE)}>
+        <Typography variant="button" onClick={() => navigate(HOME_ROUTE)}>
           <img src={flixxo} alt="Flixxo" />
         </Typography>
       </Toolbar>

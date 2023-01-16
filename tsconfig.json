@@ -6,6 +6,7 @@
       "dom.iterable",
       "esnext"
     ],
+    "types": ["cypress", "node"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -22,6 +23,9 @@
     "baseUrl": "src"
   },
   "include": [
-    "src"
-  ]
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+    "./cypress/**/*.ts",
+    "./cypress.d.ts"
+, "cypress/component/HomePage.cy.tsx", "cypress/integration/HomePage.spec.js"  ],
 }

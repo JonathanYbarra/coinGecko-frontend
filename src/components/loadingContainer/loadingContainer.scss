@@ -1,5 +1,7 @@
+@use "styles/mixins/flex.scss";
+
 .loading-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex.flexbox();
+    @include flex.align-items(center);
+    @include flex.justify-content(center);
 }

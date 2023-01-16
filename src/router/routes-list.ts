@@ -1,4 +1,4 @@
-export const DASHBOARD_ROUTE = "dashboard";
+export const HOME_ROUTE = "home";
 export const COIN_ROUTE = "/coin";
 
 export const COINS_ROUTE_BASE = "coins";
