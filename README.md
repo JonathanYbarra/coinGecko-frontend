@@ -24,4 +24,6 @@
 - [Sass](https://sass-lang.com/) - Preprocesador de CSS
 - [Material-UI](https://mui.com/) - Biblioteca de componentes visuales basados en Material Design
 
-- Puede visitar la aplicación en producción con integración continua en Vercel en el siguiente link: [coin-gecko-frontend](https://coin-gecko-frontend.vercel.app/)
+## Acceso a la aplicación en Vercel
+
+Puede visitar la aplicación en producción con integración continua en Vercel en el siguiente link: [coin-gecko-frontend](https://coin-gecko-frontend.vercel.app/)
